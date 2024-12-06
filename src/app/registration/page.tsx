@@ -36,7 +36,6 @@ const Registration = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const res = await registration(data)
-    console.log(res.data.fullUser)
     if (res) {
       dispatch(setUser(res.data.fullUser));
       router.push('/')

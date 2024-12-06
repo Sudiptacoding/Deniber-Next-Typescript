@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 const useSyncUser = () => {
     const dispatch = useDispatch();
     const { data, error } = useCurrentUserQuery(undefined);
-    console.log(data)
     useEffect(() => {
         if (data) {
             dispatch(setUser(data)); // ইউজার সেট করা
