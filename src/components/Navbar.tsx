@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { useLogOutUserMutation } from '@/redux/slices/authApi';
 import { clearUser } from '@/redux/slices/userSlice';
+import Profile from './../app/(Profile)/profile/page';
 
 
 const Navbar = () => {
@@ -55,13 +56,26 @@ const Navbar = () => {
                     <Image height={100} width={100} className="w-36" src={logo} alt="logo" />
                 </a>
             </div>
+
+
             <div className="hidden navbar-center lg:flex">
                 <ul className="gap-10 px-1 menu menu-horizontal">
                     <Link href={'/'} className='p-2 text-common'>Buy</Link>
                     <Link href={'/'} className='p-2 text-common'>Rent</Link>
                     <Link href={'/'} className='p-2 text-common'>Service</Link>
+                    <details className="dropdown">
+                        <summary className="p-2 text-common cursor-pointer">Demo Page</summary>
+                        <ul className="menu dropdown-content bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm">
+                            <Link href={'/profile'} className='p-2 text-common'>Profile</Link>
+                            <Link href={'/addproperty'} className='p-2 text-common'>Addproperty</Link>
+                            <Link href={'/property-details'} className='p-2 text-common'>Property Details</Link>
+                            <Link href={'/search-result'} className='p-2 text-common'>Search Result</Link>
+                        </ul>
+                    </details>
                 </ul>
             </div>
+
+
             <div className="items-center gap-4 navbar-end">
                 {/* Large screens */}
                 <div className="hidden gap-4 lg:flex">
